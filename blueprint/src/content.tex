@@ -1,0 +1,158 @@
+% In this file you should put the actual content of the blueprint.
+% It will be used both by the web and the print version.
+% It should *not* include the \begin{document}
+%
+% If you want to split the blueprint content into several files then
+% the current file can be a simple sequence of \input. Otherwise It
+% can start with a \section or \chapter for instance.
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Introduction}
+I would like to present here a short and elementary proof of the following theorem.
+
+\begin{theorem}\label{thm:sum-three-squares}
+If $m$ is a positive integer not of the form $4^{a}(8n+7)$, then $m$ is the sum of three squares.
+\end{theorem}
+
+\begin{proof}
+
+We make use of an elegant method of Professor H. Davenport~\cite{Davenport1947} in the Geometry of Numbers.
+
+Without loss of generality we will prove Theorem~\ref{thm:sum-three-squares} only when $m$ is square free. (In the following $m$ will be assumed to be square free.)
+In Section~\ref{sec:case1} we shall prove Theorem~\ref{thm:sum-three-squares} when $m\equiv3$ (mod 8). In Section~\ref{sec:case2} we will merely outline the proof when $m\equiv1, 2, 5, 6$ (mod 8), as the proof is almost identical except for minor changes.
+
+We shall only assume the reader is familiar with the elementary facts of the law of quadratic reciprocity, Minkowski's Theorem on lattice points contained within convex symmetric bodies; and when a positive integer is the sum of two squares.
+
+\phantomsection
+\refstepcounter{section}
+\label{sec:case1}
+\noindent 1. Let $m$ be a positive square free integer $\equiv3$ (mod 8), and $m=p_{1}p_{2}\cdots p_{r}$ where $p_{j}$'s are primes.
+Denote by $q$ a positive prime which satisfies
+
+\begin{align}
+\label{eq:1} \tag{1}
+(-2q/p_{j})&=+1, \quad j=1, 2, \cdots, r \\
+\label{eq:2} \tag{2}
+q&\equiv1 \pmod{4}
+\end{align}
+
+with $(a/b)$ denoting the Jacobi Symbol. We see that such a prime exists by Dirichlet's theorem regarding primes in an arithmetic progression,
+as \eqref{eq:1} and \eqref{eq:2} merely necessitate that $q$ lie within certain relatively prime residue classes (mod $4m$).
+
+By \eqref{eq:1} and \eqref{eq:2}
+\begin{align*}
+1&=\prod_{j=1}^{r}(-2q/p_{j})=\prod_{j=1}^{r}(-2/p_{j})(q/p_{j}) \\
+\intertext{(3)}
+&=(-2/m)\prod_{j=1}^{r}(p_{j}/q) \\
+&=(-2/m)(m/q)=(-2/m)(-m/q) \\
+&=(-m/q)
+\end{align*}
+
+as $m\equiv3$ (mod 8).
+Hence, as $q$ is an odd prime we can find an odd integer $b$ such that $b^{2}\equiv-m$ (mod $q$), or
+\begin{equation}
+b^{2}-qh_{1}=-m. \label{eq:4} \tag{4}
+\end{equation}
+Considering \eqref{eq:4} (mod 4) yields $1-h_{1}\equiv+1$ (mod 4), or $h_{1}=4h$ where $h$ is a rational integer and
+\begin{equation}
+b^{2}-4qh=-m. \label{eq:5} \tag{5}
+\end{equation}
+Utilizing \eqref{eq:1} we can find an integer $t$ such that
+\begin{equation}
+t^{2}\equiv-1/2q \pmod{m}. \label{eq:6} \tag{6}
+\end{equation}
+We now consider the figure
+\begin{equation}
+R^{2}+S^{2}+T^{2}<2m \label{eq:7} \tag{7}
+\end{equation}
+where
+\begin{align}
+R&=2tqx+tby+mz, \notag \\
+S&=(2q)^{1/2}x+b/(2q)^{1/2}y, \label{eq:8} \tag{8} \\
+T&=m^{1/2}/(2q)^{1/2}y \notag
+\end{align}
+
+In the $(R, S, T)$ space \eqref{eq:7} defines a convex, symmetric (about the origin) body of volume $4/3\pi(2m)^{3/2}.$
+
+The determinant of the transformations \eqref{eq:8} is $m^{3/2}$. Hence, in the $(x, y, z)$ space, \eqref{eq:7} represents a
+convex symmetric body of volume $1/3(2^{7/2}\pi)$, and certainly $1/3(2^{7/2}\pi) > 8$.
+
+Hence, by Minkowski's Theorem on convex symmetric body in three dimensions of volume $>8$, we know there exist
+integer values of $x, y, z$ not all zero which satisfy \eqref{eq:7}. Let $x_{1}, y_{1}, z_{1}$ be the integers which satisfy
+\eqref{eq:7} and \eqref{eq:8}, $R_{1}, S_{1}, T_{1}$ the corresponding values of $R, S, T$.
+
+By \eqref{eq:8}
+
+$$R_{1}^{2}+S_{1}^{2}+T_{1}^{2}=(2tqx_{1}+tby_{1}+mz_{1})^{2}$$
+$$+((2q)^{1/2}x_{1}+b/(2q)^{1/2}y_{1})^{2}+(m^{1/2}/(2q)^{1/2}y_{1})^{2}$$
+\begin{align}
+&\equiv t^{2}(2qx_{1}+by_{1})^{2}+1/2q(2qx_{1}+by_{1})^{2} \notag \\
+&\equiv0 \pmod{m} \label{eq:9} \tag{9}
+\end{align}
+by \eqref{eq:6}, the selection of $t$.
+Furthermore,
+\begin{align}
+R_{1}^{2}+S_{1}^{2}+T_{1}^{2}&=R_{1}^{2}+((2q)^{1/2}x_{1}+b/(2q)^{1/2}y_{1})^{2}+(m^{1/2}/(2q)^{1/2}y_{1})^{2} \notag \\
+&=R_{1}^{2}+1/2q(2qx_{1}+by_{1})^{2}+m/2qy_{1}^{2} \label{eq:10} \tag{10} \\
+&=R_{1}^{2}+2(qx_{1}^{2}+bx_{1}y_{1}+hy_{1}^{2}). \notag
+\end{align}
+Let $v$ be the positive rational integer defined by
+\begin{equation}
+v=qx_{1}^{2}+bx_{1}y_{1}+hy_{1}. \label{eq:11} \tag{11}
+\end{equation}
+We note that $R_{1}$ is a rational integer and by \eqref{eq:9}, \eqref{eq:10}, and \eqref{eq:11} that $m|R_{1}^{2}+2v$, but by \eqref{eq:7} $R_{1}^{2}+2v<2m$. Furthermore $R_{1}^{2}+2v\ne0$, by the nondegenerate triangular transformation \eqref{eq:8} and the fact that not all $x_{1}, y_{1}, z_{1}$ equal zero. Hence,
+\begin{equation}
+R_{1}^{2}+2v=m. \label{eq:12} \tag{12}
+\end{equation}
+Let $p$ be an odd prime which exactly divides $v$ to an odd power, i.e. $p^{2n+1}||v$.
+If $p$ does not divide $m$, then by \eqref{eq:12},
+\begin{equation}
+(m/p)=+1. \label{eq:13} \tag{13}
+\end{equation}
+By \eqref{eq:11}
+\begin{equation}
+4qv=(2qx_{1}+by_{1})^{2}+my_{1}. \label{eq:14} \tag{14}
+\end{equation}
+If $p|q$, then \eqref{eq:5}, $(-m/p)=1$.
+If $p \nmid q$, then by \eqref{eq:14}
+$$p^{2n+1}||e^{2}+mf^{2} \text{ or } (-m/p)=1.$$
+Thus, in either case,
+\begin{equation}
+(-m/p)=+1 \label{eq:15} \tag{15}
+\end{equation}
+which combined with \eqref{eq:13} implies
+\begin{equation}
+(-1/p)=1 \text{ or } p\equiv1 \pmod{4}. \label{eq:16} \tag{16}
+\end{equation}
+
+If $p|v$, $p|m$, then by \eqref{eq:11} and \eqref{eq:12}
+
+$$R_{1}^{2}+2v=m$$
+or
+\begin{equation}
+R_{1}^{2}+\frac{1}{2q}((2qx_{1}+by_{1})^{2}+my_{1}^{2})=m \label{eq:17} \tag{17}
+\end{equation}
+which implies $p|R_{1}$, $p|(2qx_{1}+by_{1})$, and thus as $m$ is square free by dividing both sides of \eqref{eq:17} by $p$, yields
+$$\frac{1}{2q}\frac{m}{p}y_{1}^{2}=\frac{m}{p} \pmod{p}$$
+or
+$$y_{1}^{2}\equiv2q \pmod{p}, \quad \left(\frac{2q}{p}\right)=+1$$
+which combined with \eqref{eq:1} gives $(-1/p)=+1$ or $p\equiv1$ (mod 4).
+Thus all odd primes which exactly divide $v$ to an odd power are $\equiv1$ (mod 4). Thus $2v$ is the sum of two square integers. By \eqref{eq:12} this implies $m$ is the sum of three square integers, which proves Theorem~\ref{thm:sum-three-squares} when $m\equiv3$ (mod 8).
+
+\vspace{1em}
+
+\phantomsection
+\refstepcounter{section}
+\label{sec:case2}
+\noindent 2. If $m \equiv 1, 2, 5$ or $6$ (mod 8), we alter the proof in Section~\ref{sec:case1} in the following ways.
+Let $q$ be a prime, $(-q/p_{j})=+1$ for all odd prime divisors of $m$, $q\equiv1$ (mod 4), and if $m$ is even,
+$$m=2m_{1}, \quad (-2/q)=(-1)^{(m_{1}-1)/2}, \quad t^{2}\equiv-1/q \pmod{p_{j}},$$
+$t$ odd, $b^{2}-qh=-m$
+and
+\begin{align*}
+R&=tqX+tby+mz, \\
+S&=q^{1/2}x+b/q^{1/2}y, \\
+T&=m^{1/2}/q^{1/2}y.
+\end{align*}
+The proof will proceed exactly as in Section~\ref{sec:case1}, which will complete the proof when $m\equiv1, 2, 3, 5, 6$ (mod 8), and thus for all square free $m$.
+\end{proof}
